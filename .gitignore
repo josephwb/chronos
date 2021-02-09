@@ -1,0 +1,52 @@
+# R
+.Rproj.user
+.RData
+
+# phyx
+phyx.logfile
+
+# OS-generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+*~
+*.app
+*.exe
+*.war
+
+# IDE-specific files (e.g. Eclipse) - especially important across OSs
+*.cproject
+*.project
+.idea/
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+.Rapp.history
+.Rhistory
+
+# Packages/compressed files. Can take up a LOT of space, as every version is retained.
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Node artifact files
+node_modules/
+dist/
+
+# Compiled Java class files
+*.class
+
+# Compiled Python bytecode
+*.py[cod]
