@@ -1,0 +1,5 @@
+.gitignore
+.git
+.travis.yml
+phyckle_sim.png
+
