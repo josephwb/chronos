@@ -1,4 +1,4 @@
-export(chronosCI, drawChronosCI)
+export(chronosCI, drawChronosCI, qage, rage)
 
 importFrom(ape, .PlotPhyloEnv, branching.times, chronos, drop.tip, makeNodeLabel, Nedge.phylo, Ntip, nodelabels, root)
 importFrom(phangorn, bootstrap.pml, pml.control)
@@ -6,4 +6,4 @@ importFrom(graphics, legend, rect, yinch)
 importFrom(grDevices, colorRampPalette, dev.cur, devAskNewPage,
            deviceIsInteractive, rainbow, rgb)
 importFrom(stats, bw.nrd0, density, quantile, rpois, runif, qbeta, qlogis)
-
+importFrom(Rdpack, reprompt)

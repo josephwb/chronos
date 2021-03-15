@@ -83,10 +83,10 @@
 qage <- function(p=0.5, ages,  method="StraussSadler", k=5) {
  	
 	if (length(ages) < 2) {
-		stop("More than one fossil age is needed for inference");
+		stop("More than one fossil age is needed for inference.", call.=FALSE);
 	}
   if (p < 0 || p > 1.0) {
-    stop("Valid values for p are: 0 < p < 1");
+    stop("Valid values for p are: 0 < p < 1.");
   }
  	
  	ages <- sort(ages, decreasing=TRUE);
