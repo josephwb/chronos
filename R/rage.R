@@ -13,7 +13,7 @@
 ##' first with the minimum age bounds (upper stratigraphic bounds) and the
 ##' second with the maximum age bounds (lower stratigraphic bounds) of each
 ##' fossil (in rows). A minimum of 2 are required.
-##' @param ... Other options passed to \code{qage}
+##' @param ... Other options passed to \code{\link{qage}}.
 ##' @details If ages are known exactly, only min.ages is used. If some or all
 ##' ages have uncertainty, typically upper and lower bounds defined by
 ##' bracketing geological strata, age maximums and minimums are set for each

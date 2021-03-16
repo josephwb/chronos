@@ -14,7 +14,7 @@ fossil (in rows). A minimum of 2 are required.}
 
 \item{n}{Number of samples to be drawn. Default n = 1000.}
 
-\item{...}{Other options passed to \code{qage}}
+\item{...}{Other options passed to \code{\link{qage}}.}
 }
 \value{
 A numeric vector of length \code{n} representing simulated clade
