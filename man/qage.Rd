@@ -71,9 +71,9 @@ functions are simply Xn/(1-P), and the likelihood function is 1/X.
 \examples{
 \dontrun{
   # The following demonstrates how inferences depend on p and method
-  qage(p=c(0.1, 0.5, 0.9), ages=c(54, 30, 25, 14, 5));
-  qage(p=c(0.1, 0.5, 0.9), ages=c(54, 30, 25, 14, 5), method="Beta");
-  qage(p=c(0.1, 0.5, 0.9), ages=c(54, 30, 25, 14, 5), method="Solow");
+  qage(p=c(0.1, 0.5, 0.9), ages=c(54, 30, 25, 14, 5))
+  qage(p=c(0.1, 0.5, 0.9), ages=c(54, 30, 25, 14, 5), method="Beta")
+  qage(p=c(0.1, 0.5, 0.9), ages=c(54, 30, 25, 14, 5), method="Solow")
   }
 }
 \references{
