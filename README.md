@@ -1,4 +1,4 @@
-[![R build status](https://github.com/josephwb/chronos/workflows/R-CMD-check/badge.svg)](https://github.com/josephwb/chronos/actions)
+[![Build Status](https://travis-ci.com/josephwb/chronos.svg?branch=master)](https://travis-ci.com/josephwb/chronos)
 ### chronos: Molecular Dating by Penalised Likelihood and Maximum Likelihood
 ---------------
 Confidence intervals in molecular dating by penalised likelihood
