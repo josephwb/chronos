@@ -15,11 +15,11 @@ isUnimodal <- function(density)
 
 getDensel <- function(el)
 {
-    start <- bw.nrd0(el)
+    start <- stats::bw.nrd0(el)
     inc <- start / 10
     b <- start
     repeat {
-        densel <- density(el, bw = b)
+        densel <- stats::density(el, bw = b)
         if (isUnimodal(densel)) {
             xsmall <- densel$x < 1e-8
             if (any(xsmall)) {
@@ -47,7 +47,7 @@ Cdensel <- function(f)
 ## random branch lengths
 rbl <- function(n, F) {
     z <- numeric(n)
-    p <- runif(n)
+    p <- stats::runif(n)
     N <- length(F$y)
     if (any(s <- p < F$y[1])) z[s] <- F$x[1]
     if (any(l <- p > F$y[N])) z[l] <- F$x[N]
@@ -89,32 +89,32 @@ chronosCI <-
         tr0 <- treeML
         tr0$tip.label <- NULL
         TR <- vector("list", B)
-        N <- Nedge.phylo(treeML)
+        N <- ape::Nedge.phylo(treeML)
         for (i in 1:B) {
-            tr0$edge.length <- rpois(N, S * treeML$edge.length) / S
+            tr0$edge.length <- stats::rpois(N, S * treeML$edge.length) / S
             TR[[i]] <- tr0
         }
         class(TR) <- "multiPhylo"
         attr(TR, "TipLabel") <- taxa
     } else {
         if (!quiet) cat("Running phangorn bootstrap...")
-        TR <- bootstrap.pml(pml.output, B, optNni = FALSE,
-                            control = pml.control(trace = 0L))
+        TR <- phangorn::bootstrap.pml(pml.output, B, optNni = FALSE,
+                            control = phangorn::pml.control(trace = 0L))
     }
     if (!quiet) cat("\n")
 
     ## root and drop the outgroup from the bootstrap trees:
-    rTR <- lapply(TR, function(x) drop.tip(root(x, outgroup), outgroup))
+    rTR <- lapply(TR, function(x) ape::drop.tip(ape::root(x, outgroup), outgroup))
 
     ## make labels associated to the edges of the chronogram:
-    tmp <- c(ingroup, makeNodeLabel(chronogram, "md5sum")$node.label)
+    tmp <- c(ingroup, ape::makeNodeLabel(chronogram, "md5sum")$node.label)
     original.edge.labels <- tmp[chronogram$edge[, 2]]
-    original.ints <- chronogram$edge[, 2] > Ntip(chronogram)
+    original.ints <- chronogram$edge[, 2] > ape::Ntip(chronogram)
     ## id. for the 1st bootstrap tree:
     tr1 <- rTR[[1]]
-    tmp <- c(tr1$tip.label, makeNodeLabel(tr1, "md5sum")$node.label)
+    tmp <- c(tr1$tip.label, ape::makeNodeLabel(tr1, "md5sum")$node.label)
     boot.edge.labels <- tmp[tr1$edge[, 2]]
-    boot.ints <- tr1$edge[, 2] > Ntip(tr1)
+    boot.ints <- tr1$edge[, 2] > ape::Ntip(tr1)
     ## to reorder the results below
     needReorder <- !identical(original.edge.labels, boot.edge.labels)
     if (needReorder)
@@ -167,38 +167,12 @@ chronosCI <-
             ages2 <- sapply(CALS, "[", i)
             cal[match(names(ages2), cal$node), 2:3] <- ages2
         }
-        CHR[[i]] <- chronos(rTR[[i]], quiet = TRUE, model = model, calibration = cal)
+        CHR[[i]] <- ape::chronos(rTR[[i]], quiet = TRUE, model = model,
+                                 calibration = cal)
     }
-    BT <- sapply(CHR, branching.times)
-    CI <- apply(BT, 1, quantile, probs = c(0.025, 0.25, 0.75, 0.975))
+    BT <- sapply(CHR, ape::branching.times)
+    CI <- apply(BT, 1, stats::quantile, probs = c(0.025, 0.25, 0.75, 0.975))
     if (!quiet) cat("\nDone.\n")
     if (needReorder) CI <- CI[, o]
     CI
 }
-
-drawChronosCI <- function(CI, col95 = "#FF00004D", col50 = "#0000FF4D", height = NULL,
-                          legend = TRUE, ...)
-{
-    lastPP <- get("last_plot.phylo", envir = .PlotPhyloEnv)
-    present <- lastPP$xx[1]
-    if (is.null(height)) height <- yinch(0.2)
-
-    ## the nodes are renumbered => need to use labels
-
-    for (i in 1:ncol(CI)) {
-        L <- present - CI[1, i]
-        R <- present - CI[4, i]
-        B <- lastPP$yy[i + lastPP$Ntip] - height / 2
-        T <- B + height
-        rect(L, B, R, T, col = col95, border = NULL)
-        L <- present - CI[2, i]
-        R <- present - CI[3, i]
-        rect(L, B, R, T, col = col50, border = NULL)
-    }
-    if (!identical(legend, FALSE)) {
-        loc <- if (is.logical(legend)) "topleft" else legend
-        legend(loc, legend = c("95% CI", "50% CI"), pch = 22,
-               pt.bg = c(col95, col50), col = c(col95, col50), ...)
-    }
-}
-

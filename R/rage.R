@@ -27,23 +27,23 @@
 ##'   hist(rage(n=10000, ages=c(50, 30, 25, 14, 3.5)), breaks=500, freq=FALSE,
 ##'     xlim=c(50,120), xlab="Clade Age",
 ##'     main="Strauss & Sadler Example\nn=1000, ages=c(50, 30, 25, 14, 3.5)");
-##'   curve(dexp(x-50, rate=0.07), col='blue', lwd=2, add=TRUE);
-##'   legend("right", legend="dexp", col="blue", lty=1, lwd=2, box.lty=0);
+##'   graphics::curve(dexp(x-50, rate=0.07), col='blue', lwd=2, add=TRUE);
+##'   graphics::legend("right", legend="dexp", col="blue", lty=1, lwd=2, box.lty=0);
 ##'   
 ##'   # Example using the method of Solow (2003)
 ##'   hist(rage(n=10000, ages=c(50, 30, 25, 14, 3.5), method="Solow"),
 ##'     breaks=500, freq=FALSE, xlim=c(50,120), xlab="Clade Age",
 ##'     main="Solow Example\nn=1000, min.ages=c(50, 30, 25, 14, 3.5)");
-##'   curve(dexp(x-50, rate=0.04), col='blue', lwd=2, add=TRUE); # heavy on intermediate values
-##'   curve(dlnorm(x-50, meanlog=log(50-30), sdlog=pi/sqrt(3)), col='orange', lwd=2, add=TRUE);
-##'   legend("right", legend=c("dexp", "dlnorm"), col=c("blue", "orange"), lty=1, lwd=2, box.lty=0);
+##'   graphics::curve(dexp(x-50, rate=0.04), col='blue', lwd=2, add=TRUE); # heavy on intermediate values
+##'   graphics::curve(dlnorm(x-50, meanlog=log(50-30), sdlog=pi/sqrt(3)), col='orange', lwd=2, add=TRUE);
+##'   graphics::legend("right", legend=c("dexp", "dlnorm"), col=c("blue", "orange"), lty=1, lwd=2, box.lty=0);
 ##'   
 ##'   # Strauss & Sadler (1989) method incorporating fossil age uncertainty
 ##'   hist(rage(n=10000, ages=cbind(c(50, 30, 25, 14, 3.5), c(56, 35, 25, 14, 6))),
 ##'     breaks=500, freq=FALSE, xlim=c(50,120), xlab="Age",
 ##'     main="Solow Example (with fossil age uncertainty)n=1000,\nages=cbind(c(50, 30, 25, 14, 3.5), c(56, 35, 25, 14, 6))")
-##'   curve(dlnorm(x-50, meanlog=2.6, sdlog=0.9), col='blue', lwd=2, add=TRUE);
-##'   legend("right", legend="dlnorm", col="blue", lty=1, lwd=2, box.lty=0);
+##'   graphics::curve(dlnorm(x-50, meanlog=2.6, sdlog=0.9), col='blue', lwd=2, add=TRUE);
+##'   graphics::legend("right", legend="dlnorm", col="blue", lty=1, lwd=2, box.lty=0);
 ##'   }
 ##' @export
 rage <- function(ages, n=1000, ...) {
@@ -58,7 +58,7 @@ rage <- function(ages, n=1000, ...) {
 
 	# When fossil ages are known exactly
 	if (ncol(ages) == 1) {
-		rA <- qage(p=runif(n), ages=ages[,1], ...);
+		rA <- qage(p=stats::runif(n), ages=ages[,1], ...);
 	} else if (ncol(ages) == 2) {
 		# When fossil ages are known from time intervals (max-min)
 
@@ -69,8 +69,8 @@ rage <- function(ages, n=1000, ...) {
 	
 		rA <- numeric(length=n);
 		for(i in 1:n) {
-			A <- runif(nrow(ages), min=ages[,1], max=ages[,2]);
-			rA[i] <- qage(p=runif(1), ages=A, ...);
+			A <- stats::runif(nrow(ages), min=ages[,1], max=ages[,2]);
+			rA[i] <- qage(p=stats::runif(1), ages=A, ...);
 		}
 	}
 	return(rA);

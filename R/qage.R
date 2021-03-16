@@ -98,17 +98,17 @@ qage <- function(p=0.5, ages,  method="StraussSadler", k=5) {
 	} else if (method=="Beta") {
 		n <- length(ages);
 		range <- max(ages) - min(ages);
-		X <- range/qbeta(p=p, shape1=n, shape2=1, lower.tail=FALSE);
+		X <- range/stats::qbeta(p=p, shape1=n, shape2=1, lower.tail=FALSE);
 		AGE <- X + min(ages);
 	} else if (method=="Solow") {
 		AGE <- ages[1] + (ages[1]-ages[2])*p/(1-p);
 	} else if (method=="NorrisPenG") {
 		PenG <- ages[1] - ages[2];
-		UltG <- exp(qlogis(p=p, location=log(PenG)));
+		UltG <- exp(stats::qlogis(p=p, location=log(PenG)));
 		AGE <- UltG + ages[1];
 	} else if (method=="NorrisGLin") {
 		GLin <- ages[1] - ages[2]
-		UltG <- exp(qlogis(p=p, location=log(GLin/2)));
+		UltG <- exp(stats::qlogis(p=p, location=log(GLin/2)));
 		AGE <- UltG + ages[1];
 	} else if (method=="RobertsSolow") {
 		# Select the k oldest observations
