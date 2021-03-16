@@ -21,12 +21,12 @@ A numeric vector of length \code{n} representing simulated clade
 ages.
 }
 \description{
-This function uses the quantile function above to generate
-random clade ages from the corresponding models.
+This function uses the \code{\link{qage}} function above to
+generate random clade ages from the corresponding models.
 }
 \details{
-If ages are known exactly, only min.ages is used. If some or all
-ages have uncertainty, typically upper and lower bounds defined by
+If ages are known exactly, only minimum ages are used. If some or
+all ages have uncertainty, typically upper and lower bounds defined by
 bracketing geological strata, age maximums and minimums are set for each
 fossil.
 }

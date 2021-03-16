@@ -6,16 +6,16 @@
 # corresponding models.
 
 ##' @title Random clade age generator
-##' @description This function uses the quantile function above to generate
-##' random clade ages from the corresponding models.
+##' @description This function uses the \code{\link{qage}} function above to
+##' generate random clade ages from the corresponding models.
 ##' @param n Number of samples to be drawn. Default n = 1000.
 ##' @param ages Either a vector of fossil ages or a matrix with two columns: the
 ##' first with the minimum age bounds (upper stratigraphic bounds) and the
 ##' second with the maximum age bounds (lower stratigraphic bounds) of each
 ##' fossil (in rows). A minimum of 2 are required.
 ##' @param ... Other options passed to \code{\link{qage}}.
-##' @details If ages are known exactly, only min.ages is used. If some or all
-##' ages have uncertainty, typically upper and lower bounds defined by
+##' @details If ages are known exactly, only minimum ages are used. If some or
+##' all ages have uncertainty, typically upper and lower bounds defined by
 ##' bracketing geological strata, age maximums and minimums are set for each
 ##' fossil.
 ##' @return A numeric vector of length \code{n} representing simulated clade
@@ -58,7 +58,7 @@ rage <- function(ages, n=1000, ...) {
 		stop("'ages' must be a vector or a two-column matrix.");
 	}
 	if (n < 0) {
-	  stop("n must be a positive integer.")
+	  stop("n must be a positive integer.");
 	}
 
 	# When fossil ages are known exactly
