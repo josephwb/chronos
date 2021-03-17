@@ -1,14 +1,13 @@
 # For help debugging build failures open an issue on the RStudio community with the 'github-actions' tag.
 # https://community.rstudio.com/new-topic?category=Package%20development&tags=github-actions
 
-# remember to change to master if committing to this
 on:
   push:
     branches:
-      - roxygen
+      - master
   pull_request:
     branches:
-      - roxygen
+      - master
 
 name: R-CMD-check
 
