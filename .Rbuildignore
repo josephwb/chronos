@@ -1,5 +1,5 @@
-.gitignore
-.git
-.travis.yml
-phyckle_sim.png
+^\.gitignore$
+^\.git$
+^\.travis\.yml$
+^\.github$
 
