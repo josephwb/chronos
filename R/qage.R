@@ -79,6 +79,7 @@
 ##' \insertRef{Wang2009}{chronos}
 ##' 
 ##' \insertRef{Wang2010}{chronos}
+##' @keywords models
 ##' @export
 qage <- function(p=0.5, ages,  method="StraussSadler", k=5) {
  	

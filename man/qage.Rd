@@ -18,9 +18,9 @@ fossil (in rows). A minimum of 2 are required}
 \item{method}{The method for modelling age uncertainty. A number of options
 is available:
 \itemize{
-\item{\code{"StraussSadler"}} {The (default) method of Strauss & Sadler 
-(1989) assumes that the sampled fossil ages are uniformly distributed in 
-time, and a warning is returned if a Kolmogorov-Smirnov test rejects the 
+\item{\code{"StraussSadler"}} {The (default) method of Strauss & Sadler
+(1989) assumes that the sampled fossil ages are uniformly distributed in
+time, and a warning is returned if a Kolmogorov-Smirnov test rejects the
 uniformity hypothesis.}
 \item{\code{“Beta”}} {The method is a different parameterization of the
 Strauss & Sadler method (Wang et al., 2009) that uses the qbeta function,
@@ -28,7 +28,7 @@ since the ratio between the observed maximum fossil age and the clade age
 for the Strauss & Sadler model is distributed according to a Beta
 distribution with parameters N and 1 (Wang et al. 2009); this should give
 the same result as "StraussSadler".}
-\item{\code{Solow}} {The method of Solow (2003) does not assume uniformity 
+\item{\code{Solow}} {The method of Solow (2003) does not assume uniformity
 in sampled fossil ages, but is based on the two oldest ages only.}
 \item{\code{NorrisPenG} or \code{NorrisGLin}} {The method of Norris et al.
 (2015) based on the two oldest fossils only and the log-logistic
@@ -91,3 +91,4 @@ functions are simply Xn/(1-P), and the likelihood function is 1/X.
 
 \insertRef{Wang2010}{chronos}
 }
+\keyword{models}

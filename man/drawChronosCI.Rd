@@ -14,7 +14,7 @@ drawChronosCI(
 )
 }
 \arguments{
-\item{CI}{output from \code{\link{chronosCI}} or a similar matrix.}
+\item{CI}{output from \code{\link[=chronosCI]{chronosCI()}} or a similar matrix.}
 
 \item{col95}{colour used for the 95\% intervals; by default: transparent
 red.}
@@ -26,7 +26,7 @@ blue.}
 
 \item{legend}{a logical value.}
 
-\item{\dots}{arguments passed to \code{\link[graphics]{legend}}}
+\item{\dots}{arguments passed to \code{\link[graphics:legend]{graphics::legend()}}}
 }
 \description{
 This is a low-level plotting command to draw the confidence
@@ -46,7 +46,7 @@ give the lower and upper bounds of the 50\% confidence intervals.
 }
 }
 \seealso{
-\code{\link{chronosCI}}
+\code{\link[=chronosCI]{chronosCI()}}
 }
 \author{
 Emmanuel Paradis, Santiago Claramunt, Joseph Brown, Klaus Schliep

@@ -2,18 +2,18 @@
 ##' @title Draw Confidences Intervals on Phylogenies
 ##' @description This is a low-level plotting command to draw the confidence
 ##' intervals on the node of a tree as rectangles with coloured backgrounds.
-##' @param CI output from \code{\link{chronosCI}} or a similar matrix.
-##' @param col95 colour used for the 95\% intervals; by default: transparent
+##' @param CI output from [chronosCI()] or a similar matrix.
+##' @param col95 colour used for the 95% intervals; by default: transparent
 ##' red.
-##' @param col50 colour used for the 50\% intervals; by default: transparent
+##' @param col50 colour used for the 50% intervals; by default: transparent
 ##' blue.
 ##' @param height the height of the boxes.
 ##' @param legend a logical value.
-##' @param \dots arguments passed to \code{\link[graphics]{legend}}
+##' @param \dots arguments passed to [graphics::legend()]
 ##' @details The matrix \code{CI} must have four rows and as many columns as the
 ##' number of nodes of the tree. The first and fourth rows give the lower and
-##' upper bounds of the 95\% confidence intervals. The second and third rows
-##' give the lower and upper bounds of the 50\% confidence intervals.
+##' upper bounds of the 95% confidence intervals. The second and third rows
+##' give the lower and upper bounds of the 50% confidence intervals.
 ##' @return NULL
 ##' @author Emmanuel Paradis, Santiago Claramunt, Joseph Brown, Klaus Schliep
 ##' @importFrom graphics legend rect yinch
@@ -23,7 +23,7 @@
 ##' ##-- ==>  Define data, use random,
 ##' ##--	or do  help(data=index)for the standard data sets.
 ##' }
-##' @seealso \code{\link{chronosCI}}
+##' @seealso [chronosCI()]
 ##' @keywords aplot
 ##' @export
 drawChronosCI <- function(CI, col95 = "#FF00004D", col50 = "#0000FF4D",

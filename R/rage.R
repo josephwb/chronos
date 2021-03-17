@@ -6,14 +6,14 @@
 # corresponding models.
 
 ##' @title Random clade age generator
-##' @description This function uses the \code{\link{qage}} function above to
-##' generate random clade ages from the corresponding models.
+##' @description This function uses the [qage()] function above to generate
+##' random clade ages from the corresponding models.
 ##' @param n Number of samples to be drawn. Default n = 1000.
 ##' @param ages Either a vector of fossil ages or a matrix with two columns: the
 ##' first with the minimum age bounds (upper stratigraphic bounds) and the
 ##' second with the maximum age bounds (lower stratigraphic bounds) of each
 ##' fossil (in rows). A minimum of 2 are required.
-##' @param ... Other options passed to \code{\link{qage}}.
+##' @param ... Other options passed to [qage()].
 ##' @details If ages are known exactly, only minimum ages are used. If some or
 ##' all ages have uncertainty, typically upper and lower bounds defined by
 ##' bracketing geological strata, age maximums and minimums are set for each
@@ -50,6 +50,7 @@
 ##'   graphics::curve(dlnorm(x-50, meanlog=2.6, sdlog=0.9), col='blue', lwd=2, add=TRUE)
 ##'   graphics::legend("right", legend="dlnorm", col="blue", lty=1, lwd=2, box.lty=0)
 ##'   }
+##' @seealso [qage()]
 ##' @export
 rage <- function(ages, n=1000, ...) {
 	ages <- as.matrix(ages)

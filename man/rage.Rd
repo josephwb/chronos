@@ -14,15 +14,15 @@ fossil (in rows). A minimum of 2 are required.}
 
 \item{n}{Number of samples to be drawn. Default n = 1000.}
 
-\item{...}{Other options passed to \code{\link{qage}}.}
+\item{...}{Other options passed to \code{\link[=qage]{qage()}}.}
 }
 \value{
 A numeric vector of length \code{n} representing simulated clade
 ages.
 }
 \description{
-This function uses the \code{\link{qage}} function above to
-generate random clade ages from the corresponding models.
+This function uses the \code{\link[=qage]{qage()}} function above to generate
+random clade ages from the corresponding models.
 }
 \details{
 If ages are known exactly, only minimum ages are used. If some or
@@ -59,4 +59,7 @@ fossil.
   graphics::curve(dlnorm(x-50, meanlog=2.6, sdlog=0.9), col='blue', lwd=2, add=TRUE)
   graphics::legend("right", legend="dlnorm", col="blue", lty=1, lwd=2, box.lty=0)
   }
+}
+\seealso{
+\code{\link[=qage]{qage()}}
 }
