@@ -4,7 +4,7 @@
 ##' @title Confidence Intervals of Chronograms
 ##' @description Computes the confidence intervals of a chronogram using
 ##' different methods.
-##' @param chronogram a chronogram output by \code{\link[ape]{chronos}}. 
+##' @param chronogram a chronogram output by \code{\link[ape]{chronos}}.
 ##' @param pml.output an unrooted tree output by
 ##' \code{\link[phangorn]{optim.pml}}. 
 ##' @param B the number of replications.
@@ -18,7 +18,7 @@
 ##' @param quiet a logical value. By default, the progress of the
 ##' computations is printed.
 ##' @details The details of the methods are presented in the manuscript below.
-##' \cr\cr
+##' 
 ##' The labels (or taxa names) of the first argument (\code{chronogram})
 ##' must be present in the second argument (\code{pml.output}), and this
 ##' second one must also include the outgroup.
@@ -38,6 +38,7 @@
 ##' ##--	or do  help(data=index)for the standard data sets.
 ##' }
 ##' @seealso \code{\link{qage}} \code{\link{drawChronosCI}}
+##' \code{\link[phangorn]{bootstrap.pml}}
 ##' @keywords models
 ##' @export
 chronosCI <-

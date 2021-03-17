@@ -47,7 +47,7 @@ different methods.
 }
 \details{
 The details of the methods are presented in the manuscript below.
-\cr\cr
+
 The labels (or taxa names) of the first argument (\code{chronogram})
 must be present in the second argument (\code{pml.output}), and this
 second one must also include the outgroup.
@@ -65,6 +65,7 @@ intervals in molecular dating by penalized likelihood. (in preparation)
 }
 \seealso{
 \code{\link{qage}} \code{\link{drawChronosCI}}
+\code{\link[phangorn]{bootstrap.pml}}
 }
 \author{
 Emmanuel Paradis, Santiago Claramunt, Joseph Brown, Klaus Schliep
