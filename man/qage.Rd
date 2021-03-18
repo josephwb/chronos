@@ -77,18 +77,18 @@ functions are simply Xn/(1-P), and the likelihood function is 1/X.
   }
 }
 \references{
-\insertRef{Gingerich1998}{chronosCI}
+\insertRef{Gingerich1998}{chronos}
 
-\insertRef{Norris2015}{chronosCI}
+\insertRef{Norris2015}{chronos}
 
-\insertRef{Solow2003}{chronosCI}
+\insertRef{Solow2003}{chronos}
 
-\insertRef{Strauss1989}{chronosCI}
+\insertRef{Strauss1989}{chronos}
 
-\insertRef{Wang2007}{chronosCI}
+\insertRef{Wang2007}{chronos}
 
-\insertRef{Wang2009}{chronosCI}
+\insertRef{Wang2009}{chronos}
 
-\insertRef{Wang2010}{chronosCI}
+\insertRef{Wang2010}{chronos}
 }
 \keyword{models}

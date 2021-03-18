@@ -66,19 +66,19 @@
 ##'   }
 ##' @importFrom Rdpack reprompt
 ##' @references
-##' \insertRef{Gingerich1998}{chronosCI}
+##' \insertRef{Gingerich1998}{chronos}
 ##' 
-##' \insertRef{Norris2015}{chronosCI}
+##' \insertRef{Norris2015}{chronos}
 ##' 
-##' \insertRef{Solow2003}{chronosCI}
+##' \insertRef{Solow2003}{chronos}
 ##' 
-##' \insertRef{Strauss1989}{chronosCI}
+##' \insertRef{Strauss1989}{chronos}
 ##' 
-##' \insertRef{Wang2007}{chronosCI}
+##' \insertRef{Wang2007}{chronos}
 ##' 
-##' \insertRef{Wang2009}{chronosCI}
+##' \insertRef{Wang2009}{chronos}
 ##' 
-##' \insertRef{Wang2010}{chronosCI}
+##' \insertRef{Wang2010}{chronos}
 ##' @keywords models
 ##' @export
 qage <- function(p=0.5, ages,  method="StraussSadler", k=5) {

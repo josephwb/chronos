@@ -1,4 +1,4 @@
-Package: chronosCI
+Package: chronos
 Version: 0.1
 Date: 2021-03-11
 Title: Molecular Dating by Penalised Likelihood and Maximum Likelihood
@@ -12,6 +12,6 @@ ZipData: no
 Description: Confidence intervals in molecular dating by penalised likelihood.
 License: GPL-3
 Encoding: UTF-8
-URL: https://github.com/josephwb/chronosCI
+URL: https://github.com/josephwb/chronos
 RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)

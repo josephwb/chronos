@@ -1,5 +1,5 @@
-[![R build status](https://github.com/josephwb/chronosCI/workflows/R-CMD-check/badge.svg)](https://github.com/josephwb/chronosCI/actions)
-### chronosCI: Molecular Dating by Penalised Likelihood and Maximum Likelihood
+[![R build status](https://github.com/josephwb/chronos/workflows/R-CMD-check/badge.svg)](https://github.com/josephwb/chronos/actions)
+### chronos: Molecular Dating by Penalised Likelihood and Maximum Likelihood
 ---------------
 Confidence intervals in molecular dating by penalised likelihood
 
@@ -7,7 +7,7 @@ Confidence intervals in molecular dating by penalised likelihood
 ---------------
 ```
 install.packages("devtools");
-devtools::install_github("josephwb/chronosCI", dependencies=TRUE);
+devtools::install_github("josephwb/chronos", dependencies=TRUE);
 ```
 ### References
 ---------------
