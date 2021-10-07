@@ -1,17 +1,17 @@
 Package: chronos
-Version: 0.1
-Date: 2021-03-11
+Version: 0.1-1
+Date: 2021-10-07
 Title: Molecular Dating by Penalised Likelihood and Maximum Likelihood
 Authors@R: c(person("Joseph", "Brown", role = c("aut", "cre", "cph"), email = "josephwb@umich.edu", comment = c(ORCID = "0000-0002-3835-8062")),
   person("Santiago", "Claramunt", role = c("aut", "cph"), comment = c(ORCID = "0000-0002-8926-5974")),
   person("Emmanuel", "Paradis", role = c("aut", "cph"), comment = c(ORCID = "0000-0003-3092-2199")),
   person("Klaus", "Schliep", role = c("aut", "cph"), comment = c(ORCID = "0000-0003-2941-0161")))
-Imports: ape, phangorn, Rdpack
+Imports: ape (>= 5.5-2), phangorn, Rdpack
 RdMacros: Rdpack
 ZipData: no
 Description: Confidence intervals in molecular dating by penalised likelihood.
 License: GPL-3
 Encoding: UTF-8
 URL: https://github.com/josephwb/chronos
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Roxygen: list(markdown = TRUE)
