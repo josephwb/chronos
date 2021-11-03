@@ -1,6 +1,6 @@
 Package: chronos
 Version: 0.1-1
-Date: 2021-10-07
+Date: 2021-11-03
 Title: Molecular Dating by Penalised Likelihood and Maximum Likelihood
 Authors@R: c(person("Joseph", "Brown", role = c("aut", "cre", "cph"), email = "josephwb@umich.edu", comment = c(ORCID = "0000-0002-3835-8062")),
   person("Santiago", "Claramunt", role = c("aut", "cph"), comment = c(ORCID = "0000-0002-8926-5974")),
