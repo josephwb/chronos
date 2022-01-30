@@ -1,0 +1,12 @@
+Code to replicate the simulations reported in:                        
+"Confidence intervals in molecular dating by maximum likelihood"
+by Paradis et al. (in revision for Methods in Ecology and Evolution)
+
+COMMON_CODE.R: contains functions used in all simulation runs
+rate.CorrTest.R: R code from https://github.com/cathyqqtao/CorrTest (edited to return only the value of test and to remove some dependencies)
+NELSI_RCodeOnly/: R files from https://github.com/sebastianduchene/NELSI (edited to remove some dependencies)
+run_1/: code for running and analysing the run 1 (see paper and README file in the folder)
+run_2/: idem for run 2
+run_3/: idem for run 3
+run_4/: idem for run 4
+

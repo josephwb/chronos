@@ -1,0 +1,6 @@
+sim_ConfidenceIntervals_Oct2021.R: code to run simulations (run 3)
+chronos_simulations.zip: results from run 3
+analysis_postSim.R: code to analyse the previous file
+
+(see ../README for other files called by these two)
+

@@ -1,0 +1,3 @@
+sim_CrossValivation_Oct2021.R: code to run simulations (run 2) and analyse the output
+
+(see ../README for other files called by these two)

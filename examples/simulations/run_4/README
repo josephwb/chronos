@@ -1,0 +1,6 @@
+sim_ModelMisspecified_Dec2021.R: code to run simulations (run 4)
+sim_wrongmodel.rda: results from run 4
+analysis_postSim_ModelMisspecified.R: code to analyse the previous file
+
+(see ../README for other files called by these two)
+

@@ -1,0 +1,6 @@
+sim_ModelSelection_Oct2021.R: code to run simulations (run 1)
+analysis_post_sim_ModelSelection.R: code to analyse the output from the previous file
+sim_ModelSelection010.out: output from the run 1
+sim_ModelSelection011.out: output from the run 1 (alternative run with "mild" parameters)
+
+(see ../README for other files called by these two)
