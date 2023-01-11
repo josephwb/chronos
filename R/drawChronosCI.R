@@ -17,7 +17,7 @@
 ##' @return NULL
 ##' @author Emmanuel Paradis, Santiago Claramunt, Joseph Brown, Klaus Schliep
 ##' @importFrom graphics legend rect yinch
-##' @examples 
+##' @examples
 ##' \dontrun{
 ##' ##---- Should be DIRECTLY executable !! ----
 ##' ##-- ==>  Define data, use random,
@@ -30,24 +30,34 @@ drawChronosCI <- function(CI, col95 = "#FF00004D", col50 = "#0000FF4D",
                           height = NULL, legend = TRUE, ...)
 {
   lastPP <- get("last_plot.phylo", envir = ape::.PlotPhyloEnv)
-  present <- lastPP$xx[1]
   if (is.null(height)) height <- graphics::yinch(0.2)
-  
   ## the nodes are renumbered => need to use labels
-  
-  for (i in 1:ncol(CI)) {
-    L <- present - CI[1, i]
-    R <- present - CI[4, i]
-    B <- lastPP$yy[i + lastPP$Ntip] - height / 2
-    T <- B + height
-    graphics::rect(L, B, R, T, col = col95, border = NULL)
-    L <- present - CI[2, i]
-    R <- present - CI[3, i]
-    graphics::rect(L, B, R, T, col = col50, border = NULL)
+  direction <- lastPP$direction
+  left_right <- FALSE
+  if(direction=="rightwards" || direction=="leftwards"){
+  	left_right <- TRUE
+  	if(direction=="rightwards") CI <- max(lastPP$xx) - CI
+  	if(direction=="leftwards") CI <- min(lastPP$xx) + CI
+  	Y <- lastPP$yy - height / 2
   }
+  else {
+  	if(direction=="downwards") CI <- min(lastPP$yy) + CI
+  	if(direction=="upwards") CI <- max(lastPP$yy) - CI
+  	Y <- lastPP$xx - height / 2
+  }
+  L <- CI[1, ]
+  R <- CI[4, ]
+  B <- Y[ - seq_len(lastPP$Ntip)]
+  T <- B + height
+  if(left_right) graphics::rect(L, B, R, T, col = col95, border = NULL)
+  else graphics::rect(B, L, T, R, col = col95, border = NULL)
+  L <- CI[2, i]
+  R <- CI[3, i]
+  if(left_right) graphics::rect(L, B, R, T, col = col50, border = NULL)
+  else graphics::rect(B, L, T, R, col = col50, border = NULL)
   if (!identical(legend, FALSE)) {
-    loc <- if (is.logical(legend)) "topleft" else legend
-    graphics::legend(loc, legend = c("95% CI", "50% CI"), pch = 22,
-           pt.bg = c(col95, col50), col = c(col95, col50), ...)
+  	loc <- if (is.logical(legend)) "topleft" else legend
+  	graphics::legend(loc, legend = c("95% CI", "50% CI"), pch = 22,
+  					 pt.bg = c(col95, col50), col = c(col95, col50), ...)
   }
 }
