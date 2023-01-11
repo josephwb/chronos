@@ -18,6 +18,8 @@ CV(
 \item{lambda}{a numeric vector with the values of smoothing
 parameter to be assessed.}
 
+\item{model}{the model of rate evolution. currently set to autocorrelated.}
+
 \item{quiet}{a logical value.}
 
 \item{calibration}{a data frame with the calibration dates of the

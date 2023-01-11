@@ -15,6 +15,7 @@
 ##' @param phy an object of class \code{"phylo"}.
 ##' @param lambda a numeric vector with the values of smoothing
 ##'     parameter to be assessed.
+##' @param model the model of rate evolution. currently set to autocorrelated.
 ##' @param quiet a logical value.
 ##' @param calibration a data frame with the calibration dates of the
 ##'     chronogram.
