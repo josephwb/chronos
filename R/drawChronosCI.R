@@ -51,8 +51,8 @@ drawChronosCI <- function(CI, col95 = "#FF00004D", col50 = "#0000FF4D",
   T <- B + height
   if(left_right) graphics::rect(L, B, R, T, col = col95, border = NULL)
   else graphics::rect(B, L, T, R, col = col95, border = NULL)
-  L <- CI[2, i]
-  R <- CI[3, i]
+  L <- CI[2, ]
+  R <- CI[3, ]
   if(left_right) graphics::rect(L, B, R, T, col = col50, border = NULL)
   else graphics::rect(B, L, T, R, col = col50, border = NULL)
   if (!identical(legend, FALSE)) {
