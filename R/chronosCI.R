@@ -29,7 +29,7 @@
 ##' @references Paradis, E., Claramunt, S., Brown, J., and Schliep, K. Confidence
 ##' intervals in molecular dating by penalized likelihood. (in preparation)
 ##' @author Emmanuel Paradis, Santiago Claramunt, Joseph Brown, Klaus Schliep
-##' @importFrom ape Nedge.phylo drop.tip root makeNodeLabel Ntip branching.times chronos
+##' @importFrom ape chronos.control Nedge.phylo drop.tip root makeNodeLabel Ntip branching.times chronos
 ##' @importFrom stats rpois
 ##' @importFrom phangorn bootstrap.pml pml.control
 ##' @importFrom stats quantile
