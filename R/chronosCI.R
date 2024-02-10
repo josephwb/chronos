@@ -19,7 +19,7 @@
 ##' computations is printed.
 ##' @param trees a logical value specifying whether to return the bootstrap
 ##' trees produced by phangorn (FALSE, by default).
-##' @param multicore logical, whether models should estimated in parallel with phangorn::bootstrap.pml (FALSE, by default).
+##' @param multicore logical, whether models should be estimated in parallel with phangorn::bootstrap.pml (FALSE, by default).
 ##' @param mc.cores the number of cores to use in phangorn::bootstrap.pml. Only supported on UNIX-like systems.
 ##' @details The details of the methods are presented in the manuscript below.
 ##'

@@ -13,7 +13,9 @@ chronosCI(
   method = "StraussSadler",
   control = NULL,
   quiet = FALSE,
-  trees = FALSE
+  trees = FALSE,
+  multicore = FALSE,
+  mc.cores = NULL
 )
 }
 \arguments{
@@ -40,6 +42,12 @@ computations is printed.}
 
 \item{trees}{a logical value specifying whether to return the bootstrap
 trees produced by phangorn (FALSE, by default).}
+
+\item{trees}{a logical value specifying whether models should be estimated
+in parallel with phangorn::bootstrap.pml (FALSE, by default).}
+
+\item{trees}{the number of cores to use in phangorn::bootstrap.pml.
+Only supported on UNIX-like systems.}
 }
 \value{
 a matrix with the 50\\% and 95\\% lower and upper bounds of the
