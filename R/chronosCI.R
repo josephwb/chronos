@@ -19,6 +19,8 @@
 ##' computations is printed.
 ##' @param trees a logical value specifying whether to return the bootstrap
 ##' trees produced by phangorn (FALSE, by default).
+##' @param multicore logical, whether models should estimated in parallel with phangorn::bootstrap.pml (FALSE, by default).
+##' @param mc.cores the number of cores to use in phangorn::bootstrap.pml. Only supported on UNIX-like systems.
 ##' @details The details of the methods are presented in the manuscript below.
 ##'
 ##' The labels (or taxa names) of the first argument (\code{chronogram})
@@ -45,8 +47,8 @@
 ##' @export
 chronosCI <-
     function(chronogram, pml.output, B = 100, type = "semiparametric",
-             calibration = NULL, method = "StraussSadler",
-             control = NULL, quiet = FALSE, trees = FALSE)
+             calibration = NULL, method = "StraussSadler", control = NULL, 
+             quiet = FALSE, trees = FALSE, multicore = FALSE, mc.cores = NULL)
 {
     getArgument <- function(name, default) {
         i <- match(name, args)
@@ -99,7 +101,8 @@ chronosCI <-
     } else {
         if (!quiet) cat("Running phangorn bootstrap...")
         TR <- phangorn::bootstrap.pml(pml.output, B, optNni = FALSE,
-                            control = phangorn::pml.control(trace = 0L))
+                            control = phangorn::pml.control(trace = 0L), 
+                            multicore = multicore, mc.cores = mc.cores)
     }
     if (!quiet) cat("\n")
 
